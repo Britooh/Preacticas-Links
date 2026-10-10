@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container">
+<!--Multi/step Form-->
+<form id="formWizard">
+
+    <!-- Step 1: Personal Information -->
+    <div class="form-step active">
+        <h2>Step 1: Personal Information</h2>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <div class="btns">
+            <button type="button" class="next-btn">Next</button>
+        </div>
+    </div>
+
+    <!-- Step 2: Contact Info-->
+    <div class="form-step">
+        <h2>Step 2: Contact Info</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone" required>
+        <div class="btns">
+            <!--Back Button-->
+            <button type="button" class="prev-btn">Previous</button>
+            <!--Next Button-->
+            <button type="button" class="next-btn">Next</button>
+        </div>
+    </div>
+
+    <!-- Step 3: Account Setup -->
+    <div class="form-step">
+        <h2>Step 3: Account Setup</h2>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <div class="btns">
+            <!--Back Button-->
+            <button type="button" class="prev-btn">Previous</button>
+            <!--Submit Button-->
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+    </div>
+
+
+</form>
+
+<!-- Progress Bar -->
+<div class="progressbar">
+    <div class="progress" id="progress"></div>
+    <!-- Progress Steps (dots) -->
+    <div class="progress-step progress-step-btn active" data-step="0"></div>
+    <div class="progress-step progress-step-btn" data-step="1"></div>
+    <div class="progress-step progress-step-btn" data-step="2"></div>
+</div>
+
+</div>
+
+<script src="script.js"></script>   
+</body>
+</html>

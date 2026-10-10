@@ -1,0 +1,174 @@
+/* Main page layout and background */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #fff5e3 0%, #f3f6f9 100%);
+}
+
+/* Form container styling */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Hide inactive steps */
+.form-step {
+    display: none;
+}
+
+/* Show active step */
+.form-step.active {
+    display: block;
+}
+
+/* Input field styling */
+input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Highlight input on focus and error */
+input:focus {
+    border-color: #ff9800;
+    outline: none;
+}
+
+/* Ensure all input types fill container */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+button {
+    background: linear-gradient(90deg, #ff9800 0%, #f57c00 100%);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(255,152,0,0.08);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+/* Button hover effect */
+button:hover {
+    background: linear-gradient(90deg, #f57c00 0%, #ff9800 100%);
+    box-shadow: 0 4px 16px rgba(255,152,0,0.12);
+}
+
+/* Button group layout */
+.btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Align single button to right */
+.btns:only-child,
+.btns > :only-child {
+    margin-left: auto;}
+
+    /* Progress bar container */
+.progressbar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Progress bar background */
+.progressbar::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    height: 6px;
+    background: linear-gradient(90deg, #ff9800 0%, #f57c00 100%);
+    border-radius: 3px;
+    width: 0%;
+    z-index: -1;
+    transition: width 0.3s;
+}
+
+/* Progress bar fill */
+.progress {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    height: 6px;
+    background: linear-gradient(90deg, #ff9800 0%, #f57c00 100%);
+    border-radius: 3px;
+    width: 0%;
+    z-index: -1;
+    transition: width 0.3s;
+}
+
+/* Progress step (dot) styling */
+.progress-step {
+    width: 22px;
+    height: 22px;
+    background: #ffe0b2;
+    border-radius: 50%;
+    z-index: 1;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: background 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Active progress step (dot) */
+.progress-step.active {
+background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+box-shadow: 0 4px 16px rgba(255,152,0,0.18);
+}
+
+/* Make progress steps clickable */
+.progress-step-btn {
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+/* Progress step hover effect */
+.progress-step-btn:hover {
+    box-shadow: 0 0 0 6px #ff980022;
+}
+
+/* Error message styling */
+#form-error {
+font-size: 0.98rem;
+color: #f33446;
+margin-bottom: 10px;
+}
+
+/* Responsive styles for mobile*/
+@media (max-width: 500px) {
+.form-container {
+max-width: 95vw;
+padding: 0 5vw;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    font-size: 1rem;
+}
+}
